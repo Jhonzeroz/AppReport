@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">App Reports</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Reportar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reportes">Reportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/search">Búsqueda</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <br>
+  <P  style="color:#437676" class="row justify-content-center">Bienvenido {{ nombreUsuario }}! Aquí puedes realizar tus reportes</P>
+  <div>
+
+  </div>
+  
+  <!-- Display other HTML content for users, etc. -->
+  
+  <br>
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+  <form>
+    <div class="form-group">
+      <label for="CorreoUsuario">Correo Registrado</label>
+      <input disabled="" type="email" class="form-control" id="CorreoUsuario" value="{{ correoUsuario }}">
+    </div>
+    <div class="form-group">
+      <label for="TipoReporte">Selecione el tipo de daño</label>
+      <select class="form-control" name="TipoReporte" [(ngModel)]="IngresarObj.TipoReporte" >
+        <option value="1">Oscilacion de voltaje</option>
+        <option value="2">Predio sin energia</option>
+        <option value="3">Acometida en el suelo</option>
+        <option value="4">Caja de abonado en mal estado</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="Observacion">Observacion</label>
+      <textarea class="form-control" name="Observacion" [(ngModel)]="IngresarObj.Observacion" rows="3"></textarea>
+    </div>
+
+    <br>
+    <button type="submit"  (click)="GuardarReporte()"  class="btn btn-primary  justify-content-center">Envíar Reporte</button>
+  </form>
+</div>
+</div>

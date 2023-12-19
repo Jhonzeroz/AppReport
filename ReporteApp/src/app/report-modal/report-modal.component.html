@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title">Editar Reporte</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- Mostrar los datos del usuario en inputs para su edición -->
+    <div class="form-group">
+      <label for="nombreUsuario"># REPORTE:</label>
+      <input type="text" disabled="" class="form-control" id="nombreUsuario"  [(ngModel)]="user.idReporte" name="nombreUsuario" />
+    </div>
+    
+    <div class="form-group">
+      <label for="correoUsuario">TIPO DE REPORTE:</label>
+      <select class="form-control" name="TipoReporte" [(ngModel)]="user.tipoReporte">
+        <option value="1">Oscilacion de voltaje</option>
+        <option value="2">Predio sin energia</option>
+        <option value="3">Acometida en el suelo</option>
+        <option value="4">Caja de abonado en mal estado</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Observacion">OBSERVACIONES</label>
+        <textarea class="form-control" name="Observacion" [(ngModel)]="user.observacion" rows="3"></textarea>
+      </div>
+    <!-- Agrega más campos según sea necesario -->
+  
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Close click')">Cerrar</button>
+    <!-- Agregar un botón para guardar los cambios -->
+    <button type="button" class="btn btn-primary" (click)="saveChanges()">Actualizar Cambios</button>
+  </div>
+  

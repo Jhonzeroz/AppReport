@@ -1,0 +1,16 @@
+<div class="parent">
+	<div class="main">
+	  <div class="signup">
+		<form #loginForm="ngForm">
+		  <label for="chk" aria-hidden="true">Report App</label>
+  
+		  <input type="email" name="CorreoUser" [(ngModel)]="loginObj.CorreoUser" placeholder="Correo" required="">
+		  <input type="password" name="PassUser" [(ngModel)]="loginObj.PassUser" placeholder="Contraseña" required="">
+  
+		  <button  [disabled]="!formValid" (click)="onLogin()" [disabled]="!loginForm.valid">Entrar</button>
+		</form>
+	  </div>
+  
+	</div>
+  </div>
+  
